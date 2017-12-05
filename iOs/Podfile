@@ -1,0 +1,12 @@
+
+target 'AdidasChallenge' do
+  use_frameworks!
+
+  # Pods for AdidasChallenge
+  pod 'Pulsator'
+  pod 'ObjectMapper'
+  pod 'Alamofire'
+  pod 'KVLoading'
+  pod 'CRNotifications'
+
+end

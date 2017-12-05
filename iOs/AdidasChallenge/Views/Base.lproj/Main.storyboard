@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="KohinoorBangla.ttc">
+            <string>KohinoorBangla-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AdidasChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="k9Y-4L-aOS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can I help you today?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ito-fT-cDi">
+                                <rect key="frame" x="14" y="20" width="347" height="143"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="irl-9O-YK9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bacon ipsum dolor amet landjaeger tail pork loin prosciutto pork belly. Ground round strip steak swine cupim" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbT-0o-qB1">
+                                <rect key="frame" x="14" y="203" width="347" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="MWG-G4-iob"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="45T-ZZ-gy0">
+                                <rect key="frame" x="309" y="139" width="50" height="50"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHF-5V-kCe">
+                                <rect key="frame" x="309" y="139" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4JO-Af-vPh"/>
+                                    <constraint firstAttribute="height" constant="50" id="KVR-Jq-sfN"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tBQ-dC-x8U"/>
+                                </constraints>
+                                <state key="normal" image="speech_icon"/>
+                                <connections>
+                                    <action selector="speechButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YCL-d8-53U"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push the button and start talking..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyJ-nT-5Fk">
+                                <rect key="frame" x="121.5" y="168" width="173.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="11"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ito-fT-cDi" secondAttribute="trailing" constant="14" id="8Vg-OE-yd3"/>
+                            <constraint firstItem="45T-ZZ-gy0" firstAttribute="height" secondItem="PHF-5V-kCe" secondAttribute="height" id="9TV-Q8-JXi"/>
+                            <constraint firstItem="45T-ZZ-gy0" firstAttribute="width" secondItem="PHF-5V-kCe" secondAttribute="width" id="BVs-br-mzQ"/>
+                            <constraint firstItem="pyJ-nT-5Fk" firstAttribute="top" secondItem="Ito-fT-cDi" secondAttribute="bottom" constant="5" id="CEX-cQ-2PC"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="k9Y-4L-aOS" secondAttribute="bottom" constant="-20" id="DBf-1t-0ra"/>
+                            <constraint firstItem="k9Y-4L-aOS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Df6-n6-t9X"/>
+                            <constraint firstItem="kbT-0o-qB1" firstAttribute="centerX" secondItem="k9Y-4L-aOS" secondAttribute="centerX" id="EEG-Jg-4UG"/>
+                            <constraint firstItem="PHF-5V-kCe" firstAttribute="top" secondItem="Ito-fT-cDi" secondAttribute="bottom" constant="-24" id="Q5B-UT-jWq"/>
+                            <constraint firstItem="45T-ZZ-gy0" firstAttribute="leading" secondItem="PHF-5V-kCe" secondAttribute="leading" id="RNc-iz-2gp"/>
+                            <constraint firstItem="k9Y-4L-aOS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YfQ-yL-xlb"/>
+                            <constraint firstItem="kbT-0o-qB1" firstAttribute="top" secondItem="PHF-5V-kCe" secondAttribute="bottom" constant="14" id="baH-eg-eI2"/>
+                            <constraint firstItem="kbT-0o-qB1" firstAttribute="leading" secondItem="Ito-fT-cDi" secondAttribute="leading" id="cLI-NR-7ZM"/>
+                            <constraint firstItem="PHF-5V-kCe" firstAttribute="leading" secondItem="pyJ-nT-5Fk" secondAttribute="trailing" constant="14" id="doE-gu-Uxj"/>
+                            <constraint firstItem="Ito-fT-cDi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="ead-50-V2V"/>
+                            <constraint firstItem="kbT-0o-qB1" firstAttribute="width" secondItem="Ito-fT-cDi" secondAttribute="width" id="g1x-9a-lBl"/>
+                            <constraint firstItem="45T-ZZ-gy0" firstAttribute="bottom" secondItem="PHF-5V-kCe" secondAttribute="bottom" id="kSe-4c-u2w"/>
+                            <constraint firstItem="Ito-fT-cDi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="upk-Ql-m7F"/>
+                            <constraint firstItem="PHF-5V-kCe" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xng-5H-fbc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="pyJ-nT-5Fk" id="p4q-C5-udg"/>
+                        <outlet property="machineLabel" destination="Ito-fT-cDi" id="Fee-fM-XXu"/>
+                        <outlet property="personLabel" destination="kbT-0o-qB1" id="cIp-wI-r9j"/>
+                        <outlet property="pulsatorImage" destination="45T-ZZ-gy0" id="lFD-Gn-s0m"/>
+                        <outlet property="speechButton" destination="PHF-5V-kCe" id="0pu-M5-DCw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="30.134932533733135"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h6a-hD-iXe">
+            <objects>
+                <viewController id="noj-Sh-GDa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rrT-5e-WHR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="G8X-ha-hza"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efg-M7-E2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="-111"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="myf-XP-fFy">
+            <objects>
+                <viewController id="2x2-jx-ucl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sUv-Gw-MZg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="HhQ-U6-qg5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omJ-25-6P7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="601"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Portrait" width="414" height="736"/>
+        <image name="speech_icon" width="180" height="180"/>
+    </resources>
+</document>
