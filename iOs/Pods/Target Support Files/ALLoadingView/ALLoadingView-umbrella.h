@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double KVLoadingVersionNumber;
-FOUNDATION_EXPORT const unsigned char KVLoadingVersionString[];
+FOUNDATION_EXPORT double ALLoadingViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char ALLoadingViewVersionString[];
 

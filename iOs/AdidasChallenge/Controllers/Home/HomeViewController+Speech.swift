@@ -7,6 +7,8 @@
 
 import Foundation
 import Speech
+import CRNotifications
+import ALLoadingView
 
 extension HomeViewController: SFSpeechRecognizerDelegate {
     
@@ -52,12 +54,11 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
                 return
             }
             
-            self.personLabel.text = result.bestTranscription.formattedString
+            self.personLabel.setTextAnimated(newText: result.bestTranscription.formattedString)
             
             if  result.isFinal {
-                self.endSpeech()
                 self.audioEngine.inputNode.removeTap(onBus: 0)
-                //CALL WS
+                self.takeDecisions(query: result.bestTranscription.formattedString)
             }
         })
         
@@ -75,7 +76,7 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
             print("audioEngine couldn't start because of an error.")
         }
         
-        infoLabel.text = "Push the button again to stop talking"
+        self.infoLabel.setTextAnimated(newText: "Push the button again to stop talking")
         
     }
     
@@ -85,6 +86,50 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
         recognitionTask = nil
         reloadUI()
         hidePulsator()
+    }
+    
+    func takeDecisions(query: String){
+        
+        ALLoadingView.manager.showLoadingView(ofType: .basic, windowMode: .fullscreen)
+        
+        //Uncomment this line to use Dummy Implementation --> NO NETWORK NEEDED
+        //var manager = NaturalLanguageInteractor(manager: NaturalLanguageDummy()).manager
+        
+        //Uncomment this line to use WIT.ai Implementation --> NETWORK NEEDED
+        let manager = NaturalLanguageInteractor(manager: NaturalLanguageWit()).manager
+        
+        manager.execute(query: query, onSuccess: { (response) in
+            self.endSpeech()
+            
+            if response.values.contains(NaturalLanguageResponseValues.training) {
+                // OPTION 1 - User requested if he can train outside
+                // Possibles entities -> "training" from possible values [training, jogging, running, ride, outside, ...]
+                
+                if let has_interval = response.has_datetime_interval, has_interval  {
+                    //User requested "training" for datetime interval
+                    self.handleInterval(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: true)
+                } else {
+                    //User requested "training" show him current forecast
+                    self.handleValue(datetime: response.datetime!, values: response.values, showTrainingMessage: true)
+                }
+                
+            } else if let has_interval = response.has_datetime_interval, has_interval  {
+                // OPTION 2 - User requested forecast for a interval datetime
+                self.handleInterval(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: false)
+            } else if let has_datetime = response.has_datetime, has_datetime {
+                // OPTION 3 - User requested forecast for a single datetime
+                self.handleValue(datetime: response.datetime!, values: response.values, showTrainingMessage: false)
+            } else {
+                // OPTION 4 - Can't understand what user has requested 😰
+                ALLoadingView.manager.hideLoadingView()
+                self.machineLabel.setTextAnimated(newText: "I don't understand... 😰")
+            }         
+            
+        }) { (error) in
+            print(error)
+            ALLoadingView.manager.hideLoadingView()
+            CRNotifications.showNotification(type: .error, title: "Error!", message: "Something went wrong...", dismissDelay: 3)
+        }
     }
     
 }

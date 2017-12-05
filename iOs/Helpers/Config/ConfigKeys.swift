@@ -13,4 +13,7 @@ enum ConfigKeys: String {
     case WIT_AI_VERSION = "WIT_AI_VERSION"
     case WIT_AI_TOKEN = "WIT_AI_TOKEN"
     case DARKSKY_URL = "DARKSKY_URL"
+    case DARKSKY_TOKEN = "DARKSKY_TOKEN"
+    case DARKSKY_ICONS = "DARKSKY_ICONS"
+    case DARKSKY_UNITS = "DARKSKY_UNITS"
 }

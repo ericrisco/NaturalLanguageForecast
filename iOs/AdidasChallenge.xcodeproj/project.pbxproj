@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		07345C1C5E3B49F250BCAC80 /* Pods_AdidasChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4BBB0C9F17B1302D21FCFA /* Pods_AdidasChallenge.framework */; };
+		338EDA5B1FD6B7B1009630D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA5A1FD6B7B1009630D2 /* UIView.swift */; };
+		338EDA5D1FD6B7D7009630D2 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA5C1FD6B7D7009630D2 /* UILabel.swift */; };
+		338EDA5F1FD6D9BD009630D2 /* HomeViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA5E1FD6D9BD009630D2 /* HomeViewController+Table.swift */; };
+		338EDA611FD6DA61009630D2 /* PossibleQuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA601FD6DA61009630D2 /* PossibleQuestionsCell.swift */; };
+		338EDA6A1FD6E885009630D2 /* ForecastInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA691FD6E885009630D2 /* ForecastInteractor.swift */; };
+		338EDA6C1FD6E8FD009630D2 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA6B1FD6E8FD009630D2 /* ForecastManager.swift */; };
+		338EDA701FD7018B009630D2 /* ForecastQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA6F1FD7018B009630D2 /* ForecastQuery.swift */; };
+		338EDA721FD70282009630D2 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA711FD70282009630D2 /* Forecast.swift */; };
+		338EDA741FD7056C009630D2 /* DarkskyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA731FD7056C009630D2 /* DarkskyForecast.swift */; };
+		338EDA781FD70BAD009630D2 /* ForecastDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA771FD70BAD009630D2 /* ForecastDummy.swift */; };
+		338EDA7A1FD70CE6009630D2 /* ForecastDarkskyAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EDA791FD70CE6009630D2 /* ForecastDarkskyAlamofire.swift */; };
 		33D86BF71FD5B066000CB18A /* HomeViewController+Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D86BF61FD5B066000CB18A /* HomeViewController+Speech.swift */; };
 		33D86BFC1FD5C189000CB18A /* ConfigKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D86BFB1FD5C189000CB18A /* ConfigKeys.swift */; };
 		33D86BFE1FD5C2F0000CB18A /* HomeViewController+Pulsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D86BFD1FD5C2F0000CB18A /* HomeViewController+Pulsator.swift */; };
@@ -62,6 +73,17 @@
 
 /* Begin PBXFileReference section */
 		1B4BBB0C9F17B1302D21FCFA /* Pods_AdidasChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdidasChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		338EDA5A1FD6B7B1009630D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		338EDA5C1FD6B7D7009630D2 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		338EDA5E1FD6D9BD009630D2 /* HomeViewController+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Table.swift"; sourceTree = "<group>"; };
+		338EDA601FD6DA61009630D2 /* PossibleQuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PossibleQuestionsCell.swift; sourceTree = "<group>"; };
+		338EDA691FD6E885009630D2 /* ForecastInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastInteractor.swift; sourceTree = "<group>"; };
+		338EDA6B1FD6E8FD009630D2 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
+		338EDA6F1FD7018B009630D2 /* ForecastQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastQuery.swift; sourceTree = "<group>"; };
+		338EDA711FD70282009630D2 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		338EDA731FD7056C009630D2 /* DarkskyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkskyForecast.swift; sourceTree = "<group>"; };
+		338EDA771FD70BAD009630D2 /* ForecastDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDummy.swift; sourceTree = "<group>"; };
+		338EDA791FD70CE6009630D2 /* ForecastDarkskyAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDarkskyAlamofire.swift; sourceTree = "<group>"; };
 		33D86BB01FD58A42000CB18A /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		33D86BF61FD5B066000CB18A /* HomeViewController+Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Speech.swift"; sourceTree = "<group>"; };
 		33D86BFB1FD5C189000CB18A /* ConfigKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigKeys.swift; sourceTree = "<group>"; };
@@ -118,6 +140,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		338EDA631FD6E730009630D2 /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA641FD6E742009630D2 /* Interactors */,
+				338EDA651FD6E748009630D2 /* Managers */,
+				338EDA661FD6E74F009630D2 /* Models */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
+		338EDA641FD6E742009630D2 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA691FD6E885009630D2 /* ForecastInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		338EDA651FD6E748009630D2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA6E1FD6E911009630D2 /* DarkskyAlamofireImplementation */,
+				338EDA6D1FD6E908009630D2 /* DummyImplementation */,
+				338EDA6B1FD6E8FD009630D2 /* ForecastManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		338EDA661FD6E74F009630D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA681FD6E843009630D2 /* DarkskyModels */,
+				338EDA6F1FD7018B009630D2 /* ForecastQuery.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		338EDA671FD6E7FA009630D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA711FD70282009630D2 /* Forecast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		338EDA681FD6E843009630D2 /* DarkskyModels */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA731FD7056C009630D2 /* DarkskyForecast.swift */,
+			);
+			path = DarkskyModels;
+			sourceTree = "<group>";
+		};
+		338EDA6D1FD6E908009630D2 /* DummyImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA771FD70BAD009630D2 /* ForecastDummy.swift */,
+			);
+			path = DummyImplementation;
+			sourceTree = "<group>";
+		};
+		338EDA6E1FD6E911009630D2 /* DarkskyAlamofireImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				338EDA791FD70CE6009630D2 /* ForecastDarkskyAlamofire.swift */,
+			);
+			path = DarkskyAlamofireImplementation;
+			sourceTree = "<group>";
+		};
 		33D86B9C1FD583C2000CB18A /* NaturalLanguage */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,16 +240,9 @@
 		33D86B9F1FD58468000CB18A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				33D86C7B1FD635A9000CB18A /* Wit & Dummy Models */,
+				33D86C7B1FD635A9000CB18A /* WitModels */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		33D86BA01FD5847C000CB18A /* Forecast */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Forecast;
 			sourceTree = "<group>";
 		};
 		33D86BF01FD5A0C8000CB18A /* ApplicationDelegate */ = {
@@ -175,13 +259,6 @@
 				33D86BF51FD5B050000CB18A /* Home */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		33D86BF21FD5A0F4000CB18A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		33D86BF31FD5A0F9000CB18A /* Views */ = {
@@ -207,6 +284,8 @@
 				33D86BFD1FD5C2F0000CB18A /* HomeViewController+Pulsator.swift */,
 				33D86BF61FD5B066000CB18A /* HomeViewController+Speech.swift */,
 				33FE5E011FD5812C00FB6E60 /* HomeViewController.swift */,
+				338EDA5E1FD6D9BD009630D2 /* HomeViewController+Table.swift */,
+				338EDA601FD6DA61009630D2 /* PossibleQuestionsCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,6 +310,8 @@
 				33D86C001FD5C3C5000CB18A /* Date.swift */,
 				33D86C031FD5C3C5000CB18A /* UIColor.swift */,
 				33D86C061FD5C3C5000CB18A /* UINavigation.swift */,
+				338EDA5A1FD6B7B1009630D2 /* UIView.swift */,
+				338EDA5C1FD6B7D7009630D2 /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,8 +328,8 @@
 		33D86C331FD5F97A000CB18A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				338EDA631FD6E730009630D2 /* Forecast */,
 				33D86C361FD5FABB000CB18A /* Commons */,
-				33D86BA01FD5847C000CB18A /* Forecast */,
 				33D86B9C1FD583C2000CB18A /* NaturalLanguage */,
 			);
 			path = Network;
@@ -293,7 +374,7 @@
 		33D86C551FD6263E000CB18A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				33D86C7A1FD6358B000CB18A /* Wit & Dummy Models */,
+				33D86C7A1FD6358B000CB18A /* WitModels */,
 				33D86C731FD6301E000CB18A /* NaturalLanguageResponse.swift */,
 				33D86C7E1FD63E1A000CB18A /* NaturalLanguageResponseValues.swift */,
 			);
@@ -334,7 +415,7 @@
 			path = DummyImplementation;
 			sourceTree = "<group>";
 		};
-		33D86C7A1FD6358B000CB18A /* Wit & Dummy Models */ = {
+		33D86C7A1FD6358B000CB18A /* WitModels */ = {
 			isa = PBXGroup;
 			children = (
 				33D86C5A1FD626B0000CB18A /* WitEntity.swift */,
@@ -342,16 +423,16 @@
 				33D86C581FD62683000CB18A /* WitEntityInterval.swift */,
 				33D86C4F1FD6226F000CB18A /* WitEntityType.swift */,
 			);
-			path = "Wit & Dummy Models";
+			path = WitModels;
 			sourceTree = "<group>";
 		};
-		33D86C7B1FD635A9000CB18A /* Wit & Dummy Models */ = {
+		33D86C7B1FD635A9000CB18A /* WitModels */ = {
 			isa = PBXGroup;
 			children = (
 				33D86C6C1FD62EFF000CB18A /* Entity+ObjectMapper.swift */,
 				33D86C6E1FD62F1F000CB18A /* EntityInterval+ObjectMapper.swift */,
 			);
-			path = "Wit & Dummy Models";
+			path = WitModels;
 			sourceTree = "<group>";
 		};
 		33FE5DF31FD5812B00FB6E60 = {
@@ -380,9 +461,9 @@
 		33FE5DFE1FD5812B00FB6E60 /* AdidasChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				338EDA671FD6E7FA009630D2 /* Models */,
 				33D86BF01FD5A0C8000CB18A /* ApplicationDelegate */,
 				33D86BF11FD5A0E8000CB18A /* Controllers */,
-				33D86BF21FD5A0F4000CB18A /* Models */,
 				33D86BF31FD5A0F9000CB18A /* Views */,
 				33FE5E0B1FD5812C00FB6E60 /* Info.plist */,
 			);
@@ -541,33 +622,44 @@
 				33D86C2E1FD5E0CC000CB18A /* NaturalLanguageNetworkDummy.swift in Sources */,
 				33D86C6F1FD62F1F000CB18A /* EntityInterval+ObjectMapper.swift in Sources */,
 				33D86C7F1FD63E1A000CB18A /* NaturalLanguageResponseValues.swift in Sources */,
+				338EDA741FD7056C009630D2 /* DarkskyForecast.swift in Sources */,
 				33D86C711FD62FA9000CB18A /* NaturalLanguageManager.swift in Sources */,
+				338EDA781FD70BAD009630D2 /* ForecastDummy.swift in Sources */,
 				33D86C741FD6301E000CB18A /* NaturalLanguageResponse.swift in Sources */,
 				33D86C191FD5C531000CB18A /* AdidasPalette.swift in Sources */,
 				33D86C0A1FD5C3C5000CB18A /* Date.swift in Sources */,
 				33D86BF71FD5B066000CB18A /* HomeViewController+Speech.swift in Sources */,
 				33D86C2C1FD5E067000CB18A /* TypeAlias.swift in Sources */,
 				33D86C0D1FD5C3C5000CB18A /* UIColor.swift in Sources */,
+				338EDA701FD7018B009630D2 /* ForecastQuery.swift in Sources */,
+				338EDA721FD70282009630D2 /* Forecast.swift in Sources */,
 				33D86C101FD5C3C5000CB18A /* UINavigation.swift in Sources */,
 				33FE5E001FD5812C00FB6E60 /* AppDelegate.swift in Sources */,
 				33D86C671FD62BAA000CB18A /* NaturalLanguageWit.swift in Sources */,
 				33D86BFC1FD5C189000CB18A /* ConfigKeys.swift in Sources */,
+				338EDA6C1FD6E8FD009630D2 /* ForecastManager.swift in Sources */,
 				33D86C6D1FD62EFF000CB18A /* Entity+ObjectMapper.swift in Sources */,
+				338EDA5F1FD6D9BD009630D2 /* HomeViewController+Table.swift in Sources */,
 				33D86C531FD6239D000CB18A /* WitEntityGrain.swift in Sources */,
 				33D86C301FD5E0DC000CB18A /* NaturalLanguageNetworkWitAlamofire.swift in Sources */,
 				33D86C591FD62683000CB18A /* WitEntityInterval.swift in Sources */,
 				33D86C3A1FD5FB76000CB18A /* NetworkResponseProtocol.swift in Sources */,
+				338EDA6A1FD6E885009630D2 /* ForecastInteractor.swift in Sources */,
 				33D86C171FD5C49D000CB18A /* Files.swift in Sources */,
 				33D86C2A1FD5E036000CB18A /* NaturalLanguageNetworkManager.swift in Sources */,
 				33D86C161FD5C49D000CB18A /* Errors.swift in Sources */,
 				33D86C761FD631A6000CB18A /* NaturalLanguageNetworkInteractor.swift in Sources */,
+				338EDA611FD6DA61009630D2 /* PossibleQuestionsCell.swift in Sources */,
 				33D86C501FD6226F000CB18A /* WitEntityType.swift in Sources */,
 				33D86C631FD62AAF000CB18A /* NaturalLanguageInteractor.swift in Sources */,
 				33D86C351FD5F9CD000CB18A /* NetworkRequest.swift in Sources */,
 				33D86C1F1FD5D889000CB18A /* ReadConfig.swift in Sources */,
 				33D86C5B1FD626B0000CB18A /* WitEntity.swift in Sources */,
 				33D86C791FD634CF000CB18A /* NaturalLanguageDummy.swift in Sources */,
+				338EDA5D1FD6B7D7009630D2 /* UILabel.swift in Sources */,
+				338EDA5B1FD6B7B1009630D2 /* UIView.swift in Sources */,
 				33D86C321FD5E28D000CB18A /* BackgroundTask.swift in Sources */,
+				338EDA7A1FD70CE6009630D2 /* ForecastDarkskyAlamofire.swift in Sources */,
 				33D86C4A1FD61410000CB18A /* NetworkResponseAlamofire.swift in Sources */,
 				33D86BFE1FD5C2F0000CB18A /* HomeViewController+Pulsator.swift in Sources */,
 			);

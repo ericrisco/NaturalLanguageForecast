@@ -6,7 +6,7 @@ target 'AdidasChallenge' do
   pod 'Pulsator'
   pod 'ObjectMapper'
   pod 'Alamofire'
-  pod 'KVLoading'
   pod 'CRNotifications'
+  pod 'ALLoadingView'
 
 end

@@ -41,6 +41,7 @@ public class NaturalLanguageNetworkWitAlamofire: NaturalLanguageNetworkManager {
                         if alamofireResponse.response.isSuccess {
                             
                             var entities = [WitEntity]()
+                            
                             if let value = response.result.value as? JSONDictonary, let jsonEntities = value["entities"] as? JSONDictonary {
                                 jsonEntities.forEach {
                                     if let objects = $0.value as? JSONArray {

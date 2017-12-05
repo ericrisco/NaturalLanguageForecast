@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C9D49E8ACEA8497269F8880B990BA347'
-               BlueprintName = 'KVLoading'
+               BlueprintIdentifier = '35C149B1BDA5B53C84B89A37BF2F6CCB'
+               BlueprintName = 'ALLoadingView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'KVLoading.framework'>
+               BuildableName = 'ALLoadingView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Alamofire" "$PODS_CONFIGURATION_BUILD_DIR/CRNotifications" "$PODS_CONFIGURATION_BUILD_DIR/KVLoading" "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper" "$PODS_CONFIGURATION_BUILD_DIR/Pulsator"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/ALLoadingView" "$PODS_CONFIGURATION_BUILD_DIR/Alamofire" "$PODS_CONFIGURATION_BUILD_DIR/CRNotifications" "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper" "$PODS_CONFIGURATION_BUILD_DIR/Pulsator"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/CRNotifications/CRNotifications.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/KVLoading/KVLoading.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper/ObjectMapper.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Pulsator/Pulsator.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "CRNotifications" -framework "KVLoading" -framework "ObjectMapper" -framework "Pulsator"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/ALLoadingView/ALLoadingView.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/CRNotifications/CRNotifications.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper/ObjectMapper.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Pulsator/Pulsator.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "ALLoadingView" -framework "Alamofire" -framework "CRNotifications" -framework "ObjectMapper" -framework "Pulsator"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

@@ -10,15 +10,12 @@ import Foundation
 public enum NaturalLanguageResponseValues: String {
     case temperatures = "temperatures"
     case current = "current"
-    case weather = "weather"
-    case running = "running"
     case forecast = "forecast"
     case wind = "wind"
     case training = "training"
-    case outside = "outside"
     case precipitation = "precipitation"
-    case cycling = "cycling"
-    case ride = "ride"
+    case hourly = "hourly"
+    case daily = "daily"
     
     static func enumFromString(string:String) -> NaturalLanguageResponseValues? {
         if let item = NaturalLanguageResponseValues(rawValue: string) {

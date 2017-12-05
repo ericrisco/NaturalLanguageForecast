@@ -11,6 +11,12 @@
 	<key>WIT_AI_TOKEN</key>
 	<string>Bearer 4YN3NTPXSSKOH6VINIK46MLXSNNZ6NTJ</string>
 	<key>DARKSKY_URL</key>
-	<string>https://api.darksky.net/forecast/</string>
+	<string>https://api.darksky.net/forecastss</string>
+	<key>DARKSKY_TOKEN</key>
+	<string>4d8f2e08ba79bb64329f676da0325619</string>
+	<key>DARKSKY_ICONS</key>
+	<string>https://ericrisco.com/weather_icons/&lt;&lt;ICON_NAME&gt;&gt;.png</string>
+	<key>DARKSKY_UNITS</key>
+	<string>si</string>
 </dict>
 </plist>

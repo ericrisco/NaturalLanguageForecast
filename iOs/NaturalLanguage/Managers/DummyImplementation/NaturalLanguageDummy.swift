@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class NaturalLanguageWitDummy: NaturalLanguageManager {
+public class NaturalLanguageDummy: NaturalLanguageManager {
     
     public func execute(query: String, onSuccess: @escaping (NaturalLanguageResponse) -> Void, onError: ErrorClosure?) {
         
@@ -29,9 +29,9 @@ public class NaturalLanguageWitDummy: NaturalLanguageManager {
         
         //Example query: "Can I go running right now?" The decisions might be like this
         response.has_datetime = true
-        response.datetime = Date.dateFormat(s: Date.actualDate())
-        response.values.append(.running)
-        response.values.append(.outside)
+        response.datetime = Date()
+        response.values.append(.training)
+        response.values.append(.hourly)
         
         return response
     }

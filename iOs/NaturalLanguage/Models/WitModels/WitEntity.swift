@@ -20,6 +20,10 @@ public class WitEntity {
     init(confidence: Double, type: WitEntityType, grain: WitEntityGrain?, value: String?, from: WitEntityInterval?, to: WitEntityInterval?){
         self.confidence = confidence
         self.type = type
+        self.grain = grain
+        self.value = value
+        self.from = from
+        self.to = to
     }
     
     //Required by ObjectMapper
