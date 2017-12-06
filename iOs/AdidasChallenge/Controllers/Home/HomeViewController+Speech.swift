@@ -107,18 +107,18 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
                 
                 if let has_interval = response.has_datetime_interval, has_interval  {
                     //User requested "training" for datetime interval
-                    self.handleInterval(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: true)
+                    self.navigateToSpeechResult(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: true)
                 } else {
-                    //User requested "training" show him current forecast
-                    self.handleValue(datetime: response.datetime!, values: response.values, showTrainingMessage: true)
+                    //User requested "training" with single datetime
+                    self.navigateToSpeechResult(from: response.datetime!, to: nil, values: response.values, showTrainingMessage: true)
                 }
                 
             } else if let has_interval = response.has_datetime_interval, has_interval  {
                 // OPTION 2 - User requested forecast for a interval datetime
-                self.handleInterval(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: false)
+                self.navigateToSpeechResult(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: false)
             } else if let has_datetime = response.has_datetime, has_datetime {
                 // OPTION 3 - User requested forecast for a single datetime
-                self.handleValue(datetime: response.datetime!, values: response.values, showTrainingMessage: false)
+                self.navigateToSpeechResult(from: response.datetime!, to: nil, values: response.values, showTrainingMessage: false)
             } else {
                 // OPTION 4 - Can't understand what user has requested 😰
                 ALLoadingView.manager.hideLoadingView()
@@ -126,7 +126,7 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
             }         
             
         }) { (error) in
-            print(error)
+            print("Natural Language error -> \(error)")
             ALLoadingView.manager.hideLoadingView()
             CRNotifications.showNotification(type: .error, title: "Error!", message: "Something went wrong...", dismissDelay: 3)
         }

@@ -34,7 +34,7 @@ class Files {
     }
     
     //This function check if a file exists on the documents folder
-    private class func fileAlreadyExists(urlString sUrl: String) -> Bool{
+    public class func fileAlreadyExists(urlString sUrl: String) -> Bool{
         
         let fileManager = FileManager.default
         let fileName = fileNameFromStringUrl(urlString: sUrl)

@@ -11,14 +11,13 @@ public class ForecastDummy: ForecastManager {
     
     public var urlString: String!
     
-    public func forecast(query: ForecastQuery, onSuccess: @escaping ([Forecast]) -> Void, onError: ErrorClosure?) {
+    public func forecast(query: ForecastQuery, onSuccess: @escaping (ResultForecast) -> Void, onError: ErrorClosure?) {
         
-        var forecasts = [Forecast]()
+        let forecast = Forecast.init(time: Date(), summary: "Dummy sun", icon: "blank", precipitation_probability: 0, precipitation_type: "snow", temperature: 30, temperature_aparent: 28, wind_speed: 20)
+        let forecasts = [Forecast]()
         
-        var forecast = Forecast.init(time: Date(), summary: "Dummy sun", icon: "blank", precipitation_probability: 0, precipitation_type: "snow", temperature: 30, temperature_aparent: 28, wind_speed: 20)
-        forecasts.append(forecast)        
-        
-        onSuccess(forecasts)
+        let result = ResultForecast.init(currently: forecast, hourly: forecasts, daily: forecasts)
+        onSuccess(result)
     
     }
     

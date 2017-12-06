@@ -13,7 +13,7 @@ public class ForecastDarkskyAlamofire: ForecastManager {
     
     public var urlString: String!
     
-    public func forecast(query: ForecastQuery, onSuccess: @escaping ([Forecast]) -> Void, onError: ErrorClosure?) {
+    public func forecast(query: ForecastQuery, onSuccess: @escaping (ResultForecast) -> Void, onError: ErrorClosure?) {
         
         DispatchQueue.global().async {
             
@@ -40,25 +40,35 @@ public class ForecastDarkskyAlamofire: ForecastManager {
                         let alamofireResponse = NetworkResponseAlamofire.init(response: response)
                         if alamofireResponse.response.isSuccess {
                             
-                            var forecasts = [Forecast]()
+                            var currently = Forecast()
+                            var hourly = [Forecast]()
+                            var daily = [Forecast]()
                             
                             if let value = response.result.value as? JSONDictonary, let jsonCurrently = value["currently"] {
                                 let forecast = Mapper<DarkskyForecast>().map(JSONObject: jsonCurrently)
-                                forecasts.append(forecast!.toForecast())
+                                currently = forecast!.toForecast()
                             }
                             
                             if let value = response.result.value as? JSONDictonary,
                                 let jsonHourly = value["hourly"] as? JSONDictonary,
                                 let data = jsonHourly["data"] as? JSONArray {
                                 
-                                let array = Mapper<DarkskyForecast>().mapArray(JSONArray: data)
-                                let list = array.map({ forecast in
+                                hourly = Mapper<DarkskyForecast>().mapArray(JSONArray: data).map({ forecast in
                                     return forecast.toForecast()
                                 })
-                                forecasts.append(contentsOf: list)
                             }
                             
-                            onSuccess(forecasts)
+                            if let value = response.result.value as? JSONDictonary,
+                                let jsonHourly = value["daily"] as? JSONDictonary,
+                                let data = jsonHourly["data"] as? JSONArray {
+                                
+                                daily = Mapper<DarkskyForecast>().mapArray(JSONArray: data).map({ forecast in
+                                    return forecast.toForecast()
+                                })
+                            }
+                            
+                            let result = ResultForecast(currently: currently, hourly: hourly, daily: daily)
+                            onSuccess(result)
                             
                         }else{
                             if let onError = onError {

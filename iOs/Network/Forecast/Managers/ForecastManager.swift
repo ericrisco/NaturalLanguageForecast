@@ -11,6 +11,6 @@ public protocol ForecastManager {
     
     var urlString: String! { get set }
     
-    func forecast(query: ForecastQuery, onSuccess: @escaping ([Forecast]) -> Void, onError: ErrorClosure?)
+    func forecast(query: ForecastQuery, onSuccess: @escaping (ResultForecast) -> Void, onError: ErrorClosure?)
     
 }

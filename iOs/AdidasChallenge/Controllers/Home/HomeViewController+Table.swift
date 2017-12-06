@@ -10,7 +10,7 @@ import UIKit
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func initPossibleQuestions(){
+    func initTable(){
         possibleQuestions.append("Can you give me temperature, wind and precipitation for the next 3 hours?")
         possibleQuestions.append("Can I go for a run this afternoon?")
         possibleQuestions.append("Can you give me the forecast for tomorrow morning?")

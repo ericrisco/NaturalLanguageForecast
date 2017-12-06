@@ -10,14 +10,16 @@ import Speech
 import Pulsator
 import CRNotifications
 import ALLoadingView
+import CoreLocation
 
 class HomeViewController: UIViewController {
 
     // MARK: - UI attributes
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var machineLabel: UILabel!
     @IBOutlet weak var speechButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var personLabel: UILabel!
+    @IBOutlet weak var personLabel: UITextView!
     
     // MARK: - Speech stuff
     var recognizer: SFSpeechRecognizer?
@@ -34,6 +36,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var titleTableLabel: UILabel!
     @IBOutlet weak var possibleQuestionsTable: UITableView!
     
+    // MARK: CurrenLocation
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocation!
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +49,7 @@ class HomeViewController: UIViewController {
         
         initPulsator()
         
-        initPossibleQuestions()
+        initTable()
         possibleQuestionsTable.dataSource = self
         possibleQuestionsTable.delegate = self
         
@@ -51,7 +57,10 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        backgroundView?.backgroundColor = UIColor(patternImage: UIImage(named: "Portrait")!)
         reloadUI()
+        determineCurrentLocation()        
+        self.navigationController?.navigationBar.transparentNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,8 +69,7 @@ class HomeViewController: UIViewController {
         pulsator.position = speechButton.layer.position
     }
     
-    // MARK: - UI
-    
+    // MARK: - UI    
     func reloadUI(){
         self.machineLabel.setTextAnimated(newText: "How can I help you today?")
         self.infoLabel.setTextAnimated(newText: "Push the button to start talking..")
@@ -102,11 +110,13 @@ class HomeViewController: UIViewController {
     
     // MARK: - Navigation
     
-    func handleInterval(from: Date, to: Date, values: [NaturalLanguageResponseValues], showTrainingMessage: Bool){
-        
-    }
+    func navigateToSpeechResult(from: Date, to: Date?, values: [NaturalLanguageResponseValues], showTrainingMessage: Bool){
     
-    func handleValue(datetime: Date, values: [NaturalLanguageResponseValues], showTrainingMessage: Bool){
+        if currentLocation == nil {
+            ALLoadingView.manager.hideLoadingView()
+            CRNotifications.showNotification(type: .info, title: "", message: "I need to know your location to get the forecast...", dismissDelay: 3)
+            return
+        }
         
         //Uncomment this line to use Dummy Implementation --> NO NETWORK NEEDED
         //var manager = ForecastInteractor.init(manager: ForecastDummy(), urlString: ReadConfig.value(keyname: ConfigKeys.DARKSKY_URL.rawValue)).manager
@@ -114,18 +124,30 @@ class HomeViewController: UIViewController {
         //Uncomment this line to use Darksky Forecast Implementation --> NETWORK NEEDED
         let manager = ForecastInteractor.init(manager: ForecastDarkskyAlamofire(), urlString: ReadConfig.value(keyname: ConfigKeys.DARKSKY_URL.rawValue)).manager
         
-        let query = ForecastQuery.init(gps_lat: 42.5058524, gps_lon: 1.5189267, date: datetime, units: ReadConfig.value(keyname: ConfigKeys.DARKSKY_UNITS.rawValue))
+        let query = ForecastQuery.init(gps_lat: currentLocation.coordinate.latitude, gps_lon: currentLocation.coordinate.longitude, date: from, units: ReadConfig.value(keyname: ConfigKeys.DARKSKY_UNITS.rawValue))
         
-        manager.forecast(query: query, onSuccess: { (forecasts) in
-            print(forecasts)
+        manager.forecast(query: query, onSuccess: { (result) in
+            
             ALLoadingView.manager.hideLoadingView()
+            
+            let forecastViewController = self.storyboard?.instantiateViewController(withIdentifier: "ForecastViewController") as! ForecastViewController
+            
+            forecastViewController.result = result
+            forecastViewController.showTrainingMessage = showTrainingMessage
+            forecastViewController.from = from
+            forecastViewController.to = to
+            forecastViewController.naturalLanguageValues = values
+            
+            self.navigationController?.pushViewController(forecastViewController, animated: true)
+            
         }) { (error) in
-            print(error)
+            print("Forecast error -> \(error)")
             ALLoadingView.manager.hideLoadingView()
             CRNotifications.showNotification(type: .error, title: "Error!", message: "Something went wrong...", dismissDelay: 3)
         }
         
     }
+    
     
 }
 
