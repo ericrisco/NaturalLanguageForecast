@@ -110,7 +110,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Navigation
     
-    func navigateToSpeechResult(from: Date, to: Date?, values: [NaturalLanguageResponseValues], showTrainingMessage: Bool){
+    func navigateToSpeechResult(from: Date, to: Date?, values: [NaturalLanguageResponseValues]){
     
         if currentLocation == nil {
             ALLoadingView.manager.hideLoadingView()
@@ -133,7 +133,6 @@ class HomeViewController: UIViewController {
             let forecastViewController = self.storyboard?.instantiateViewController(withIdentifier: "ForecastViewController") as! ForecastViewController
             
             forecastViewController.result = result
-            forecastViewController.showTrainingMessage = showTrainingMessage
             forecastViewController.from = from
             forecastViewController.to = to
             forecastViewController.naturalLanguageValues = values

@@ -43,12 +43,16 @@ public class NaturalLanguageNetworkWitAlamofire: NaturalLanguageNetworkManager {
                             var entities = [WitEntity]()
                             
                             if let value = response.result.value as? JSONDictonary, let jsonEntities = value["entities"] as? JSONDictonary {
-                                jsonEntities.forEach {
-                                    if let objects = $0.value as? JSONArray {
-                                        let array = Mapper<WitEntity>().mapArray(JSONArray: objects)
+                                jsonEntities.forEach ({ jsonEntity in
+                                    if let objects = jsonEntity.value as? JSONArray {
+                                        var array = Mapper<WitEntity>().mapArray(JSONArray: objects)
+                                        array = array.map({ entity in
+                                            entity.value = jsonEntity.key == "datetime" ? entity.value : jsonEntity.key
+                                            return entity
+                                        })
                                         entities.append(contentsOf: array)
                                     }
-                                }
+                                })
                             }
                             
                             onSuccess(entities)

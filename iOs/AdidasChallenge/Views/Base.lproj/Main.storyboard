@@ -214,15 +214,6 @@
                                     <constraint firstAttribute="width" constant="121" id="jsN-Km-frD"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hourly Forecast" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-yF-3lX">
-                                <rect key="frame" x="14" y="249" width="347" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="Io6-HC-ffb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="142" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="PmY-Dk-Rhs">
                                 <rect key="frame" x="0.0" y="270" width="375" height="397"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -264,8 +255,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38º" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="39" translatesAutoresizingMaskIntoConstraints="NO" id="W1K-M1-lmi">
-                                                    <rect key="frame" x="117" y="58" width="244" height="42"/>
+                                                    <rect key="frame" x="117" y="58" width="67" height="42"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="67" id="pD8-m2-PHj"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="slK-u3-Dxv"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="30"/>
@@ -281,8 +273,8 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgA-tT-WoE">
-                                                    <rect key="frame" x="14" y="64" width="347" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgA-tT-WoE">
+                                                    <rect key="frame" x="194" y="64" width="167" height="20"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -305,7 +297,6 @@
                                                 <constraint firstItem="SBZ-hv-hms" firstAttribute="top" secondItem="1f7-fp-DJO" secondAttribute="top" id="3a0-bA-LAl"/>
                                                 <constraint firstAttribute="trailing" secondItem="dgA-tT-WoE" secondAttribute="trailing" constant="14" id="5mQ-jq-vUE"/>
                                                 <constraint firstItem="yYK-UE-bBh" firstAttribute="leading" secondItem="I0v-RN-c8R" secondAttribute="trailing" constant="8" id="7bv-Bg-VNO"/>
-                                                <constraint firstItem="dgA-tT-WoE" firstAttribute="leading" secondItem="1f7-fp-DJO" secondAttribute="leading" constant="14" id="GNE-CF-saD"/>
                                                 <constraint firstItem="a2c-97-cwE" firstAttribute="leading" secondItem="1f7-fp-DJO" secondAttribute="leading" constant="14" id="GcS-mR-GQb"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yYK-UE-bBh" secondAttribute="trailing" constant="20" symbolic="YES" id="IlA-Yj-KTV"/>
                                                 <constraint firstAttribute="trailing" secondItem="SBZ-hv-hms" secondAttribute="trailing" id="KTW-5R-cCU"/>
@@ -318,8 +309,8 @@
                                                 <constraint firstItem="I0v-RN-c8R" firstAttribute="top" secondItem="SBZ-hv-hms" secondAttribute="bottom" constant="7" id="i18-tQ-hZ4"/>
                                                 <constraint firstItem="dgA-tT-WoE" firstAttribute="top" secondItem="SBZ-hv-hms" secondAttribute="bottom" constant="14" id="i6P-q0-odA"/>
                                                 <constraint firstItem="I0v-RN-c8R" firstAttribute="leading" secondItem="1f7-fp-DJO" secondAttribute="leading" constant="29" id="je6-Jr-Vjy"/>
-                                                <constraint firstAttribute="trailing" secondItem="W1K-M1-lmi" secondAttribute="trailing" constant="14" id="p9z-8e-mc9"/>
                                                 <constraint firstItem="yYK-UE-bBh" firstAttribute="top" secondItem="W1K-M1-lmi" secondAttribute="bottom" constant="-5" id="pyW-mK-FSF"/>
+                                                <constraint firstItem="dgA-tT-WoE" firstAttribute="leading" secondItem="W1K-M1-lmi" secondAttribute="trailing" constant="10" id="r5u-kH-IJu"/>
                                                 <constraint firstItem="a2c-97-cwE" firstAttribute="top" secondItem="zhQ-Tb-Dge" secondAttribute="bottom" constant="2" id="vlS-Mf-ytX"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -361,10 +352,7 @@
                             <constraint firstItem="PmY-Dk-Rhs" firstAttribute="top" secondItem="HhQ-U6-qg5" secondAttribute="top" constant="250" id="n2I-g7-BKZ"/>
                             <constraint firstItem="HhQ-U6-qg5" firstAttribute="trailing" secondItem="PmY-Dk-Rhs" secondAttribute="trailing" id="n8P-NK-CRf"/>
                             <constraint firstItem="3dh-15-Ghv" firstAttribute="leading" secondItem="HhQ-U6-qg5" secondAttribute="leading" constant="30" id="paW-54-Bnm"/>
-                            <constraint firstItem="HhQ-U6-qg5" firstAttribute="trailing" secondItem="hdD-yF-3lX" secondAttribute="trailing" constant="14" id="rD3-Bf-qXM"/>
-                            <constraint firstItem="hdD-yF-3lX" firstAttribute="leading" secondItem="HhQ-U6-qg5" secondAttribute="leading" constant="14" id="uFl-ao-UMl"/>
                             <constraint firstItem="HhQ-U6-qg5" firstAttribute="trailing" secondItem="5B3-eU-rK3" secondAttribute="trailing" constant="14" id="ucL-cv-zED"/>
-                            <constraint firstItem="PmY-Dk-Rhs" firstAttribute="top" secondItem="hdD-yF-3lX" secondAttribute="bottom" constant="-2" id="vnp-SE-7s9"/>
                             <constraint firstItem="86F-YM-R6k" firstAttribute="leading" secondItem="HhQ-U6-qg5" secondAttribute="leading" constant="30" id="x6O-ch-xws"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HhQ-U6-qg5"/>

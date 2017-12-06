@@ -9,10 +9,12 @@ import Foundation
 
 public class ResultForecast {
     
+    // MARK: - Properties
     var currently: Forecast
     var hourly: [Forecast]
     var daily: [Forecast]
     
+    // MARK: - Init
     init(currently: Forecast, hourly: [Forecast], daily: [Forecast]){
         self.currently = currently
         self.hourly = hourly

@@ -16,4 +16,5 @@ enum ConfigKeys: String {
     case DARKSKY_TOKEN = "DARKSKY_TOKEN"
     case ICONS_URL = "ICONS_URL"
     case DARKSKY_UNITS = "DARKSKY_UNITS"
+    case TRUSTING_CONFIDENCE = "TRUSTING_CONFIDENCE"
 }

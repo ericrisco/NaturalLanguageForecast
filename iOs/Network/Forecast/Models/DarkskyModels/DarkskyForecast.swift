@@ -16,6 +16,8 @@ public class DarkskyForecast {
     var precipProbability: Double!
     var precipType: String!
     var temperature: Double!
+    var temperatureHigh: Double!
+    var temperatureLow: Double!
     var apparentTemperature: Double!
     var windSpeed: Double!
     
@@ -25,6 +27,8 @@ public class DarkskyForecast {
          precipProbability: Double,
          precipType: String,
          temperature: Double,
+         temperatureHigh: Double,
+         temperatureLow: Double,
          apparentTemperature: Double,
          windSpeed: Double){
         
@@ -34,6 +38,8 @@ public class DarkskyForecast {
         self.precipProbability = precipProbability
         self.precipType = precipType
         self.temperature = temperature
+        self.temperatureHigh = temperatureHigh
+        self.temperatureLow = temperatureLow
         self.apparentTemperature = apparentTemperature
         self.windSpeed = windSpeed
         
@@ -46,6 +52,9 @@ public class DarkskyForecast {
         forecast.icon = self.icon
         forecast.precipitation_probability = self.precipProbability
         forecast.precipitation_type = self.precipType
+        forecast.temperature = self.temperature
+        forecast.temperature_low = self.temperatureLow
+        forecast.temperature_high = self.temperatureHigh
         forecast.temperature = self.temperature
         forecast.temperature_aparent = self.apparentTemperature
         forecast.wind_speed = self.windSpeed
@@ -66,6 +75,8 @@ extension DarkskyForecast: Mappable{
         precipProbability <- map["precipProbability"]
         precipType <- map["precipType"]
         temperature <- map["temperature"]
+        temperatureLow <- map["temperatureLow"]
+        temperatureHigh <- map["temperatureHigh"]
         apparentTemperature <- map["apparentTemperature"]
         windSpeed <- map["windSpeed"]
     }

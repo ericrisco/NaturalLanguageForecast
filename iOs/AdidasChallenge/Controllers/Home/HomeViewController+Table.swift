@@ -14,8 +14,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         possibleQuestions.append("Can you give me temperature, wind and precipitation for the next 3 hours?")
         possibleQuestions.append("Can I go for a run this afternoon?")
         possibleQuestions.append("Can you give me the forecast for tomorrow morning?")
-        possibleQuestions.append("Can I go for a ride with my bicycle this weekend?")
-        possibleQuestions.append("Can you give me the current forecast?")        
+        possibleQuestions.append("Can I go for a ride with my bicycle this Sunday?")
+        possibleQuestions.append("Is it raining right now?")        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

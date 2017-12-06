@@ -10,6 +10,7 @@ import Speech
 import CRNotifications
 import ALLoadingView
 
+// Speech Delegate
 extension HomeViewController: SFSpeechRecognizerDelegate {
     
     public func speechAuthorized(authorized: @escaping () -> Void, denied: @escaping () -> Void){
@@ -58,7 +59,7 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
             
             if  result.isFinal {
                 self.audioEngine.inputNode.removeTap(onBus: 0)
-                self.takeDecisions(query: result.bestTranscription.formattedString)
+                self.fetchNaturalLanguage(query: result.bestTranscription.formattedString)
             }
         })
         
@@ -88,7 +89,7 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
         hidePulsator()
     }
     
-    func takeDecisions(query: String){
+    func fetchNaturalLanguage(query: String){
         
         ALLoadingView.manager.showLoadingView(ofType: .basic, windowMode: .fullscreen)
         
@@ -101,26 +102,14 @@ extension HomeViewController: SFSpeechRecognizerDelegate {
         manager.execute(query: query, onSuccess: { (response) in
             self.endSpeech()
             
-            if response.values.contains(NaturalLanguageResponseValues.training) {
-                // OPTION 1 - User requested if he can train outside
-                // Possibles entities -> "training" from possible values [training, jogging, running, ride, outside, ...]
-                
-                if let has_interval = response.has_datetime_interval, has_interval  {
-                    //User requested "training" for datetime interval
-                    self.navigateToSpeechResult(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: true)
-                } else {
-                    //User requested "training" with single datetime
-                    self.navigateToSpeechResult(from: response.datetime!, to: nil, values: response.values, showTrainingMessage: true)
-                }
-                
-            } else if let has_interval = response.has_datetime_interval, has_interval  {
-                // OPTION 2 - User requested forecast for a interval datetime
-                self.navigateToSpeechResult(from: response.datetime_from!, to: response.datetime_to!, values: response.values, showTrainingMessage: false)
+            if let has_interval = response.has_datetime_interval, has_interval  {
+                // OPTION 1 - User requested forecast for a interval datetime
+                self.navigateToSpeechResult(from: response.datetime_from!, to: response.datetime_to!, values: response.values)
             } else if let has_datetime = response.has_datetime, has_datetime {
-                // OPTION 3 - User requested forecast for a single datetime
-                self.navigateToSpeechResult(from: response.datetime!, to: nil, values: response.values, showTrainingMessage: false)
+                // OPTION 2 - User requested forecast for a single datetime
+                self.navigateToSpeechResult(from: response.datetime!, to: nil, values: response.values)
             } else {
-                // OPTION 4 - Can't understand what user has requested 😰
+                // OPTION 3 - Can't understand what user has requested 😰
                 ALLoadingView.manager.hideLoadingView()
                 self.machineLabel.setTextAnimated(newText: "I don't understand... 😰")
             }         

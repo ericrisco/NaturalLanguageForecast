@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// TableView Delegate
 extension ForecastViewController: UITableViewDataSource, UITableViewDelegate {
     
     func initTable(){
@@ -15,8 +16,15 @@ extension ForecastViewController: UITableViewDataSource, UITableViewDelegate {
         tableValues = [Forecast]()
         
         if isInterval == true {
-            tableValues = result.hourly
-            tableValues.append(contentsOf: result.daily)
+            
+            if Date.difference(day1: from, day2: to) >= 1 {
+                //Requested Daily forecast
+                tableValues = result.daily
+            }else{
+                //Requested Hourly forecast
+                tableValues = result.hourly
+            }
+            
             tableValues = tableValues.filter({ (forecast) -> Bool in
                 return forecast.time >= from && forecast.time < to
             })

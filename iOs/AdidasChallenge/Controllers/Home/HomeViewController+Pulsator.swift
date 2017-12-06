@@ -8,7 +8,8 @@
 import Foundation
 import Pulsator
 
-extension HomeViewController{
+// Pulsator Delegate
+extension HomeViewController {
     
     public func initPulsator(){
         pulsatorImage.layer.superlayer?.insertSublayer(pulsator, below: pulsatorImage.layer)

@@ -9,8 +9,7 @@ import Foundation
 
 public enum NaturalLanguageResponseValues: String {
     case temperatures = "temperatures"
-    case current = "current"
-    case forecast = "forecast"
+    case weather = "weather"
     case wind = "wind"
     case training = "training"
     case precipitation = "precipitation"

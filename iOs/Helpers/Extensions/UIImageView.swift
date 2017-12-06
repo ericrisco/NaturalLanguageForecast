@@ -16,8 +16,6 @@ extension UIImageView {
             self.image = image
         }
         
-        print(urlString)
-        
         if urlString != "" {
             DispatchQueue.global().async {
                 do{

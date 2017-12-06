@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TableViewCell
 class ForecastTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!

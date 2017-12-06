@@ -29,7 +29,13 @@ public class NaturalLanguageWit: NaturalLanguageManager {
         
         let dateFormat = "YYYY-MM-dd'T'HH:mm:ss.SSSXXX"
         
-        entities.forEach { (entity: WitEntity) in
+        //Filter entities by a trusted confidence !
+        let trusting_confidence = Double(ReadConfig.value(keyname: ConfigKeys.TRUSTING_CONFIDENCE.rawValue))!
+        let filtered = entities.filter({ entity in
+            return entity.confidence >= trusting_confidence
+        })
+        
+        filtered.forEach { (entity: WitEntity) in
             switch entity.type.rawValue {
             case WitEntityType.interval.rawValue:
                 
@@ -62,7 +68,7 @@ public class NaturalLanguageWit: NaturalLanguageManager {
                 if let value = entity.value, let item = NaturalLanguageResponseValues.enumFromString(string: value) {
                     response.values.append(item)
                 }else{
-                    //If now mapped correctly --> It's a date
+                    //If now mapped correctly --> Maybe It's a date
                     if let grain = entity.grain {
                         
                         if let date = entity.value, Date.isValidDate(dateString: date, dateFormat: dateFormat){
