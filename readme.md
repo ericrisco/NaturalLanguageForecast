@@ -8,7 +8,8 @@ I'm using Pods in this project. You don't need to install it, they are inside th
 
 ## Keep in mind
 
-Don't open __.xcodeproj__ file, open __xcworkspace__ instead. Otherwise, you will come across different compiling issues.
+- Don't open __.xcodeproj__ file, open __xcworkspace__ instead. Otherwise, you will come across different compiling issues.
+- The speech recognizer might not work on a iOs simulator 😅. Try using your own iPhone
 
 ## Features implemented
 
@@ -16,6 +17,7 @@ Don't open __.xcodeproj__ file, open __xcworkspace__ instead. Otherwise, you wil
 - Created and configured a Natural Language Recognition application
 - Speech to WIT.ai
 - Retrieve information from WIT.ai
+- Retrieve the current location
 - Query to a Forecast API
 - Retrieve the Forecast information
 - Displays the forecast information from his given question
